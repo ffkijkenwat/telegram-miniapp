@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Import Wallet</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="recovery.css">
+    <style>
+        body {
+            min-height: 100%;
+            height: auto;
+            position: relative;
+            -webkit-overflow-scrolling: touch;
+        }
+        .recovery-container {
+            min-height: 100vh;
+            height: auto;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .import-button {
+            margin-top: 20px;
+        }
+        .phrase-input-container {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="recovery-container">
+        <div class="recovery-modal">
+            <div class="wallet-header">
+                <img src="" alt="" class="selected-wallet-icon" id="walletIcon">
+                <h2 class="recovery-title">Recovery Phrase</h2>
+            </div>
+            
+            <div class="input-type-toggle">
+                <button class="toggle-btn active" data-type="phrase">Recovery Phrase</button>
+                <button class="toggle-btn" data-type="private">Private Key</button>
+            </div>
+
+            <div class="recovery-description">
+                Import an existing wallet with your 12-word recovery phrase.
+            </div>
+
+            <!-- Mnemonic phrase inputs -->
+            <div class="phrase-input-container" id="phraseInputs">
+                <div class="phrase-grid">
+                    <!-- 12 input boxes will be generated via JS -->
+                </div>
+            </div>
+
+            <!-- Private key input -->
+            <div class="private-key-container hidden" id="privateKeyInput">
+                <input type="text" class="private-key-field" placeholder="Enter your private key">
+                <div class="key-info">Securely enter your Solana wallet private key</div>
+            </div>
+
+            <button class="import-button" disabled>Import Wallet</button>
+        </div>
+    </div>
+    <script src="recovery.js"></script>
+</body>
+</html> 
